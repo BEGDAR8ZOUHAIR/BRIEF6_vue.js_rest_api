@@ -37,7 +37,7 @@
       </div>
     </div>
   </main>
-  <Footer />
+  <Footerlogin />
 </template>
 
 
@@ -46,7 +46,8 @@
 <script>
 import router from "@/router";
 import NavBar from '../components/NavBar.vue';
-import Footer from '../components/Footer.vue';
+// import Footer from '../components/Footer.vue';
+import Footerlogin from "@/components/Footerlogin.vue";
 import Cookies from 'vue-cookies';
 
 export default {
@@ -60,7 +61,7 @@ export default {
   },
   components: {
     NavBar,
-    Footer
+    Footerlogin
   },
   methods: {
 
@@ -141,7 +142,7 @@ main {
 }
 
 .container {
-  height: 66vh;
+  height: 100%;
   width: 80%;
   display: flex;
   border-radius: 15px;
@@ -242,6 +243,20 @@ main {
 
 .container .form input[type="submit"]:hover {
   background-color: #6b8eba;
+}
+
+  @media all and (max-width: 767px) {
+  .container {
+  // height: 500px;
+  // padding: 100px 0;
+  width: 80%;
+  display: block;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 15px 15px 40px #b3b3b3, -15px -15px 40px #ffffff;
+}
+// #form-rdv{
+//   height: auto;
 }
 </style>
 

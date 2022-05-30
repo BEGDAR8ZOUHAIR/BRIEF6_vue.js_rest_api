@@ -35,7 +35,7 @@
 <script>
 
 export default {
-    name: "Footer"
+    name: "Footercopy"
 
 };
 
@@ -46,18 +46,16 @@ export default {
 <style scoped lang="scss">
 
 footer{
-    position:static;
+    position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: #68d391 !important;
     // margin-top: 500px;
 }
-  @media all and (max-width: 767px) {
-      footer{
-    position: fixed;
+/* footer  */
 
-}
-  }
+
+
 
 </style>

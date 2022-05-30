@@ -19,7 +19,7 @@
         </div>
 
         <div class="dateRDV" v-if="showDiv == 2">
-          <h3>Welcome Mr Abdelghafour</h3>
+          <h3>Welcome Mr Zouhair begdar</h3>
           <label for="start">jour</label>
           <input
             type="date"
@@ -90,7 +90,10 @@ export default {
     NavBarRdv,
     Footer 
   },
-
+  mounted()
+  {
+    this.availableCRNs=CRNs.filter(this.filterrdv)
+  },
   methods: {
       async HelloMsg() {   
       
@@ -116,13 +119,35 @@ export default {
       alert('Please enter reff');
     }
     },
+   filterrdv(timeofrdv)
+    {
+        const d=new Date();
+        const d2=new Date(this.dayRDV.RDV)
+        if(d2.getTime()>d.getTime())
+          return true
+        let h=d.getHours();
+        console.log(timeofrdv.split(" ")[0]+"             ")
+        console.log(h)
+        timeofrdv=timeofrdv.split(" ")[0];
+        return timeofrdv>h;
+    },
     async checkRDV(){
       
       let respo = await axios.post("http://localhost/architecte/backend/api/randez/checkRDV.php", {
         RDV: this.dayRDV.RDV
       });
-        if(!respo.data.response) this.availableCRNs = CRNs;
-        else this.availableCRNs = CRNs.filter(e => !respo.data.data.includes(e));
+        if(!respo.data.response){
+            console.log(this.dayRDV.RDV)
+            const test=CRNs.filter(this.filterrdv);
+           this.availableCRNs = test;
+           
+
+           }
+        else {
+          console.log(this.dayRDV.RDV)
+          const test=CRNs.filter(this.filterrdv);
+          this.availableCRNs = test.filter(e => !respo.data.data.includes(e));        
+        }
 
     },
     addRDV() {
@@ -160,7 +185,8 @@ main {
 }
 
 .container {
-  height: 66vh;
+  height: 500px;
+  // padding: 100px 0;
   width: 80%;
   display: flex;
   border-radius: 15px;
@@ -273,5 +299,21 @@ main {
 
 .container form input[type="submit"]:hover {
   background-color: #6b8eba;
+}
+
+ @media all and (max-width: 767px) {
+  .container {
+  // height: 500px;
+  // padding: 100px 0;
+  width: 80%;
+  display: block;
+  border-radius: 15px;
+  background: #ffffff;
+  box-shadow: 15px 15px 40px #b3b3b3, -15px -15px 40px #ffffff;
+}
+#form-rdv{
+  height: auto;
+}
+
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <header>
+  <!-- <header>
     <div class="navBar">
-      <img src="../assets/images/logo-only-v2.svg" alt="" />
+      <img class="img_logo" src="../assets/images/logo-only-v2.svg" alt="" />
       <ul>
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/Login">Log out</router-link></li>
@@ -12,7 +12,24 @@
         </li>
       </ul>
     </div>
-  </header>
+  </header> -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> <B>Dantaire</B> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <router-link to="/" class="nav-link active">Home</router-link>
+        </li>
+      <router-link class="nav-link " to="/Login">Log out</router-link>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
 </template>
 
 <script>
@@ -38,6 +55,11 @@ export default {
 .navBar img {
   height: 100%;
   padding-left: 5%;
+}
+@media (max-width: 600px) {
+  .img_logo {
+    width: 50px;
+  }
 }
 
 .navBar ul {

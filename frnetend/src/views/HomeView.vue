@@ -1,8 +1,9 @@
 <template>
 <NavBar />
   <div class="galerie">
-        <img src="../assets/images/description-1.svg" alt="">
-        <img src="../assets/images/booking-image-white.svg" alt="">
+     
+        <!-- <img src="../assets/images/description-1.svg" alt=""> -->
+        <img class="imge1" src="../assets/images/booking-image-white.svg" alt="">
       
     </div>
     <div class="main">
@@ -13,13 +14,13 @@
         l'activité de votre cabinet ou clinique dentaire grâce aux merveilles du Digital.</p>
     </div>
     <div class="galerie">
-        <img src="../assets/images/1.svg" alt="">
-        <img src="../assets/images/2.svg" alt="">
-        <img src="../assets/images/3.svg" alt="">
+        <!-- <img src="../assets/images/1.svg" alt=""> -->
+        <img class="imge2" src="../assets/images/2.svg" alt="">
+        <!-- <img src="../assets/images/3.svg" alt=""> -->
         
       
     </div>
-    <Footer />
+    <Foot />
 </template>
 
 
@@ -28,16 +29,17 @@
 <script>
 
 import NavBar from '../components/NavBar.vue';
-import Footer from '../components/Footer.vue';
+import Foot from '../components/Foot.vue';
+// import Cookies from 'vue-cookies';
 
 export default{
   name: "HomeView",
   components: {
     NavBar,
-    Footer
-  }
+    Foot,
+  },
 
-}
+};
 
 
 </script>
@@ -55,11 +57,27 @@ export default{
     grid-template-columns: auto auto auto;
 }
 
-.galerie img {
-    height: 100%;
+
+.galerie .imge1 {
+    height: 70%;
     width: 100%;
     background-color: white;
     text-align: center;
+    margin-top: 20px;
+    //  display: block;
+  // margin-left: 50%;
+  // margin-right: auto;
+}
+.galerie .imge2 {
+    height: 70%;
+    width: 90%;
+    background-color: white;
+    text-align: center;
+    margin-top: 20px;
+    //  display: block;
+   margin-left: 50%;
+
+  margin-right: auto;
 }
 
 /* main */
@@ -75,10 +93,34 @@ export default{
     line-height: 30px;
 }
 .main .title{
-    margin-top: 1%;
-    font-family: 'Parisienne';
-    font-size: 83px;
+    margin-top: 20%;
+    // font-family: 'Parisienne';
+    font-size: 25px;
     color: #68d391;
+}
+@media all and (max-width: 767px) {
+
+    
+.galerie .imge1 {
+    height: 70%;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    margin-top: 20px;
+    //  display: block;
+  // margin-left: 15%;
+  // margin-right: auto;
+}
+
+.galerie .imge2 {
+    height: 60%;
+    width: 70%;
+  
+    //  display: block;
+  margin-left: 50%;
+  margin-right: auto;
+}
+
 }
 
 

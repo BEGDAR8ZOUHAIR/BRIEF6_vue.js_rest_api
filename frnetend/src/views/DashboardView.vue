@@ -3,7 +3,7 @@
   <div class="container1">
   <!-- <h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2> -->
   <h2>Clients Table</h2>
-  <ul class="responsive-table">
+  <!-- <ul class="responsive-table">
     <li class="table-header">
       <div class="col col-1">First name</div>
       <div class="col col-2">Last name</div>
@@ -16,7 +16,8 @@
     </li>
     <li class="table-row" v-for="client in clients" :key="client.id">
       <div style="display: flex;width: 100%;align-items: center;">
-        <div v-for="data in Object.values(client).slice(1)" class="col col-1" data-label="First name"><input :type="(modifier == client.id)? 'text' : 'submit'" :value="data"></div>
+        <div v-for="data in Object.values(client).slice(1)" class="col col-1" data-label="First name">
+          <input :type="(modifier == client.id)? 'text' : 'submit'" :value="data"></div>
         <div class="col col-8 action-icon" data-label="Action">
           <div v-if="modifier == client.id"><input style="background-color: green;color: white;border-radius: 7px;padding: 8px 11px;width: 80px;" type="button" @click="updateclient(client.id,$event)" value="Save" ></div>
           <i v-if="modifier != client.id" class="fa-solid fa-pen" @click="changeType(client.id)"></i>
@@ -24,7 +25,39 @@
         </div>
       </div>
     </li>
-  </ul>
+  </ul> -->
+
+  <table class="table">
+  <thead>
+    <tr>
+     
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">job</th>
+      <th scope="col">Age</th>
+      <th scope="col">Reference</th>
+      <th scope="col">Date time</th>
+      <th scope="col">Date</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr v-for="client in clients" :key="client.id" >
+        <td v-for="data in Object.values(client).slice(1)">{{data}}</td>
+        
+        <td>
+          <!-- <input :type="(modifier == client.id)? 'text' : 'submit'" :value="data"></div> -->
+          <div v-if="modifier == client.id">
+          <input style="background-color: green;color: white;border-radius: 7px;padding: 8px 11px;width: 80px;" type="button" @click="updateclient(client.id,$event)" value="Save" ></div>
+          <i v-if="modifier != client.id" class="fa-solid fa-pen " @click="changeType(client.id)"></i>
+          <i v-if="modifier != client.id" class="fa-solid fa-trash-can" @click="deleteclient(client.id)"></i>
+        </td>
+    </tr>
+    <tr>
+     
+    </tr>
+  </tbody>
+</table>
 </div>
  <Footer />
 </template>
@@ -249,12 +282,13 @@ h2 {
   @media all and (max-width: 767px) {
     .table-header {
       display: none;
+      overflow-x: scroll;
     }
     .table-row{
       
     }
     li {
-      display: block;
+      display: flex;
     }
     .col {
       
@@ -270,6 +304,7 @@ h2 {
         content: attr(data-label);
         flex-basis: 50%;
         text-align: right;
+          overflow-x: scroll;
       }
     }
   }

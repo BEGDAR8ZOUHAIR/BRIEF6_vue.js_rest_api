@@ -1,7 +1,7 @@
 <template>
-  <header>
+  <!-- <header>
     <div class="navBar">
-      <img src="../assets/images/logo-only-v2.svg" alt="" />
+      <img class="img_logo" src="../assets/images/logo-only-v2.svg" alt="" />
       <ul>
         <li><router-link to="/"><a >Home</a> </router-link></li>
         <li><router-link to="/Registre"><a >Registre</a> </router-link></li>
@@ -13,7 +13,35 @@
         </li>
       </ul>
     </div>
-  </header>
+  </header> -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> <B>Dantaire</B> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <router-link to="/" class="nav-link active">Home</router-link>
+        </li>
+         <li class="nav-item">
+          <router-link to="/Registre" class="nav-link active">Registre</router-link>
+        </li>
+         <li class="nav-item">
+          <router-link to="/Login" class="nav-link active">Login</router-link>
+        </li>
+         <li>
+          <router-link to="/Rendez-vous"> <button>Rendez-vous</button></router-link >
+        </li>
+        
+      </ul>
+     
+    </div>
+  </div>
+</nav>
+
+
 </template>
 
 <script>
@@ -35,6 +63,8 @@ export default {
   justify-content: space-between;
   padding: 13px 0 12px 0;
 }
+
+
 
 .navBar img {
   height: 100%;
@@ -81,6 +111,37 @@ button {
   overflow: hidden;
   color: black;
 }
+@media (max-width: 600px) {
+  .img_logo {
+    width: 50px;
+  }
+  .navBar {
+  ul {
+    li {
+      a {
+       font-size: 20px;
+    
+      }
+    }
+  }
+ }
+ .navBar ul {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+ 
+}
+  button{
+  padding: 5px 3px 5px 3px;
+  margin-left: 10px;
+  align-items: center;
+
+
+
+  }
+
+}
+
 
 button:hover {
   background-color: #6b8eba;

@@ -1,14 +1,22 @@
 <template>
-  <header>
-    <div class="navBar">
-      <img src="../assets/images/logo-only-v2.svg" alt="" />
-      <ul>
-        <li><router-link to="/"><h2>Dashboard</h2></router-link></li>
-        <li><router-link to="/Login">Log out</router-link></li>
+ 
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"> <B>Dantaire</B> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <router-link to="/" class="nav-link active">Dashboard</router-link>
+        </li>
         
       </ul>
+      <router-link class="nav-link " to="/Login">Log out</router-link>
     </div>
-  </header>
+  </div>
+</nav>
 </template>
 
 <script>
@@ -36,6 +44,7 @@ export default {
   padding-left: 5%;
 }
 
+
 .navBar ul {
       display: flex;
     width: 100%;
@@ -53,20 +62,24 @@ export default {
         font-family: "Hind", sans-serif;
         color: white;
     :hover {
-        border-bottom: 3px solid black;
+        border-bottom: 3px solid rgb(110, 171, 199);
     }
       }
     }
   }
 }
-
+@media (max-width: 600px) {
+  .img_logo {
+    width: 50px;
+  }
+}
 /* From cssbuttons.io by @alexroumi */
 button {
   padding: 10px 20px;
   border: unset;
   border-radius: 5px;
   z-index: 1;
-  background: black;
+  background: rgb(199, 193, 193);
   position: relative;
   font-weight: 400;
   font-size: 16px;

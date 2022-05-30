@@ -36,20 +36,20 @@
       </div>
     </div>
   </div>
-  <Footer />
+  
 </template>
 
 
 <script>
 import NavBarClient from "../components/NavBarClient.vue";
-import Footer from "../components/Footer.vue";
+
 import Cookies from 'vue-cookies';
 
 export default {
   name: "ClientPage",
   components: {
     NavBarClient,
-    Footer,
+   
   },
   data(){
     return{
@@ -199,6 +199,15 @@ export default {
   margin: 5% 0;
 }
 
+@media (max-width: 800px) {
+  .calendar {
+    width: 90%;
+  }
+  .table-row {
+    
+  }
+}
+
 .calendar__picture {
   position: relative;
   height: 100px;
@@ -215,7 +224,7 @@ export default {
     top: 0;
     bottom: 0;
     position: absolute;
-    // background-color: #1c1d1c;
+    background-color: #1c1d1c;
   }
 
   h2 {
@@ -229,11 +238,12 @@ export default {
 }
 
 .calendar__date {
-  padding: 20px;
+  padding: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
   grid-gap: 10px;
   box-sizing: border-box;
+  height: 100vh;
 }
 
 .calendar__day {
@@ -272,14 +282,13 @@ export default {
 
 //dashboard client
 
-.container1 {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: 80%;
-}
+// .container1 {
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding-left: 10px;
+//   padding-right: 10px;
+//   width: 100%;
+// }
 
 h2 {
   font-size: 20px;
@@ -291,6 +300,8 @@ h2 {
 }
 
 .responsive-table {
+  
+    overflow-x: scroll;
   li {
     border-radius: 3px;
     padding: 25px 30px;
@@ -298,6 +309,7 @@ h2 {
     justify-content: space-between;
     margin-bottom: 25px;
     align-items: center;
+    
   }
   .table-header {
     background-color: #68d391;
@@ -314,7 +326,7 @@ h2 {
       display: flex;
       justify-content: space-evenly;
       width: 50%;
-      padding-right: 6%;
+      // padding-right: 6%;
       input {
         background-color: #68d391;
         color: white;
@@ -340,31 +352,34 @@ h2 {
     flex-basis: 30%;
   }
 
-  @media all and (max-width: 767px) {
-    .table-header {
-      display: none;
-    }
-    .table-row {
-    }
-    li {
-      display: block;
-    }
-    .col {
-      flex-basis: 100%;
-    }
-    .col {
-      display: flex;
-      padding: 10px 0;
-      &:before {
-        color: #6c7a89;
-        padding-right: 10px;
-        content: attr(data-label);
-        flex-basis: 50%;
-        text-align: right;
-      }
-    }
-  }
+  // @media all and (max-width: 767px) {
+  //   .table-header {
+  //     display: none;
+  //   }
+  //   .table-row {
+  //     padding: 4px 6px;
+  //   }
+  //   li {
+  //     display: block;
+  //   }
+  //   .col {
+  //     flex-basis: 100%;
+  //   }
+  //   .col {
+  //     display: flex;
+  //     padding: 10px 0;
+  //     &:before {
+  //       color: #6c7a89;
+  //       padding-right: 10px;
+  //       content: attr(data-label);
+  //       flex-basis: 10%;
+  //       text-align: right;
+  //     }
+  //   }
+  // }
+
 }
+
 footer{
   margin-top: 0;
 }

@@ -35,7 +35,7 @@
 <script>
 
 export default {
-    name: "Footer"
+    name: "Footerlogin"
 
 };
 
@@ -46,7 +46,7 @@ export default {
 <style scoped lang="scss">
 
 footer{
-    position:static;
+    // position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
@@ -55,9 +55,12 @@ footer{
 }
   @media all and (max-width: 767px) {
       footer{
-    position: fixed;
+    // position: absolute;
 
 }
   }
 
+
+
 </style>
+
